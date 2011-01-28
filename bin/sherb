@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'sherb'
+require 'pathname'
+
+if source_file = ARGV.shift
+  source = Pathname.new(source_file).realpath.to_s
+  Sherb.new_with_source(File.new(source).read, source).execute!
+else
+  source = '(<STDIN>)'
+  Sherb.new_with_source(STDIN.read, source).execute!
+end

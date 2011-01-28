@@ -1,0 +1,27 @@
+
+sherb:  a Unix Shell that supports ERB templates
+------------------------------------------------
+
+ 
+$ gem install 'sherb'
+
+$ echo 'echo 1 + 1 = <%= 1 + 1 %>' | sherb
+1 + 1 = 2
+
+
+
+$ cat > test.sh.erb <<EOF
+#!/usr/bin/env sherb
+<% 3.times do %>
+  echo Hello, world
+<% end %>
+EOF
+
+$ chmod u+x ./test.sh.erb 
+
+$ ./test.sh.erb
+Hello, world
+Hello, world
+Hello, world
+
+	

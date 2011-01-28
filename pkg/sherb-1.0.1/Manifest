@@ -1,0 +1,8 @@
+CHANGELOG
+LICENSE
+Manifest
+README
+Rakefile
+bin/sherb
+lib/sherb.rb
+test/test_all.rb
